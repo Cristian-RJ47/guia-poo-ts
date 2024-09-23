@@ -117,3 +117,61 @@ const cancion = new Cancion('Monster', 'Rock')
 cancion.getAutor
 cancion.setAutor = 'Skillet'
 cancion.datos()
+
+//EJERCICIO 5
+
+abstract class Persona{
+  protected name: string
+  protected lastname: string
+  protected address: string
+  protected cellohone: string
+  protected age: number
+
+  constructor(name:string, lastname:string, address:string, cellphone:string, age:number){
+    this.name = name
+    this.lastname = lastname
+    this.address = address
+    this.cellohone = cellphone
+    this.age = age
+  }
+
+  abstract mostraDatos():void
+
+  public adult():void{
+    if (this.age>=18) {
+      console.log('Es Mayor de edad')
+    } else {
+      console.log('Es Mayor de edad')
+    }
+  }
+}
+
+class Empleado extends Persona{
+  private sueldo: number
+
+  constructor(name:string, lastname:string, address:string, cellphone:string, age:number, sueldo:number){
+    super(name, lastname, address, cellphone, age)
+    this.sueldo = sueldo
+  }
+
+  public get getSueldo():number{
+    console.log(`Su sueldo es: $${this.sueldo}`)
+    return this.sueldo
+  }
+  
+  public set setSueldo(valor:number){
+    this.sueldo = valor
+  }
+
+  mostraDatos(): void {
+    console.log(`Nombre: ${this.name}\nApellido: ${this.lastname}\nDirección: ${this.address}\nTélefono: ${this.cellohone}\nEdad: ${this.age}\nSueldo: $${this.sueldo}`)
+  }
+}
+
+const persona1 = new Empleado('Cristiano', 'Ronaldo', 'algún lugar del mundo', '2299-9999', 41, 2000000)
+
+persona1.mostraDatos()
+persona1.adult()
+persona1.setSueldo = 10000
+persona1.getSueldo
+persona1.mostraDatos()
