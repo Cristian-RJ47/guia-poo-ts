@@ -35,3 +35,51 @@ const pagina = new Page('Hola mundo', 'Azul', 20);
 pagina.getData()
 pagina.getAlign('centrado')
 pagina.dataComplet()
+
+//EJERCICIO 2
+
+class Calculator{
+  firstNumber: number
+  secondNumber: number
+  result: number
+
+  constructor(firstNumber:number, secondNumber:number){
+    this.firstNumber = firstNumber
+    this.secondNumber = secondNumber
+    this.result = 0
+  }
+
+  public sumar():void{
+    this.result = this.firstNumber+this.secondNumber
+    console.log(`${this.firstNumber} + ${this.secondNumber} = ${this.result}`)
+  }
+
+  public restar():void{
+    this.result = this.firstNumber-this.secondNumber
+    console.log(`${this.firstNumber} - ${this.secondNumber} = ${this.result}`)
+  }
+
+  public multiplicar():void{
+    this.result = this.firstNumber*this.secondNumber
+    console.log(`${this.firstNumber} X ${this.secondNumber} = ${this.result}`)
+  }
+
+  public dividir():void{
+    this.result = this.firstNumber/this.secondNumber
+    console.log(`${this.firstNumber} / ${this.secondNumber} = ${this.result}`)
+  }
+
+  public potencia(): void {
+    let result = Math.pow(this.firstNumber, this.secondNumber);
+    console.log(`${this.firstNumber} ^ ${this.secondNumber} = ${result}`);
+}
+
+}
+
+const calculator =new Calculator(10, 5)
+
+calculator.sumar()
+calculator.restar()
+calculator.multiplicar()
+calculator.dividir()
+calculator.potencia()
