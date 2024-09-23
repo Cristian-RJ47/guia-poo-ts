@@ -83,3 +83,37 @@ calculator.restar()
 calculator.multiplicar()
 calculator.dividir()
 calculator.potencia()
+
+//EJERCICIO 3
+
+class Cancion{
+  title: string
+  genero: string
+  private autor: string
+
+  constructor(title:string, genero:string){
+    this.title = title
+    this.genero = genero
+    this.autor = 'desconocido'
+  }
+
+  public get getAutor():string{
+    console.log(this.autor)
+    return this.autor
+  }
+  
+  public set setAutor(value:string){
+    this.autor = value
+  }
+
+  public datos():void{
+    console.log(`Título: ${this.title}\nGenero: ${this.genero}\nAutor: ${this.autor}`)
+  }
+
+}
+
+const cancion = new Cancion('Monster', 'Rock')
+
+cancion.getAutor
+cancion.setAutor = 'Skillet'
+cancion.datos()
