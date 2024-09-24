@@ -118,6 +118,51 @@ cancion.getAutor
 cancion.setAutor = 'Skillet'
 cancion.datos()
 
+//EJERCICIO 4
+
+class Cuenta{
+  private user: string
+  private cantidad: number
+  private tipo: string
+  private idCuenta: number
+
+  constructor (user:string, cantidad:number, tipo:string, idcuenta:number){
+    this.user = user
+    this.cantidad = cantidad
+    this.tipo = tipo
+    this.idCuenta = idcuenta
+  }
+
+  public infoCuenta():void{
+    console.log(`Nombre: ${this.user}\nTipo de cuenta: ${this.tipo}\nNúmero de cuenta: ${this.idCuenta}\nSaldo: $${this.cantidad}`)
+  }
+
+  public depositar(deposito:number):void{
+    if (deposito>5) {
+      this.cantidad = this.cantidad + deposito
+      console.log(`Se ha depositado correctamente: $${deposito}\nEl saldo de su cuenta es: $${this.cantidad}`)
+    } else {
+      console.log('El valor a depositar debe ser mayor a $5.00')
+    }
+  }
+
+  public retirar(retiro:number):void{
+    if (retiro>5 && retiro<this.cantidad) {
+      this.cantidad = this.cantidad-retiro
+      console.log(`Se ha retirado correctamente: $${retiro}\nEl saldo de su cuenta es: $${this.cantidad}`)
+    } else {
+      console.log('Error. El valor a retirar debe ser mayor a $5.00 y debe tener fondos suficientes en su cuenta')
+    }
+  }
+}
+
+const usuario = new Cuenta('Cristian', 100, 'ahorro', 123456789 )
+usuario.infoCuenta()
+usuario.depositar(2)
+usuario.depositar(100)
+usuario.retirar(5)
+usuario.retirar(100)
+usuario.retirar(100)
 //EJERCICIO 5
 
 abstract class Persona{
